@@ -1,0 +1,104 @@
+{{! Load CSS First }}
+<link href="{{version}}/common.css" rel="stylesheet">
+
+<style type="text/css">
+	@media only screen and (max-width: 1023px) {
+		.fv-hours-mob {
+			font-size: 4.5vw;
+			font-weight: bold;
+		}
+	}
+
+</style>
+
+
+<div class="fv-container">
+	<!-- DESKTOP -->
+	<div class="fv-desktop">
+		<!-- HERO -->
+		<div class="row fv-hero">
+			<img src="https://assets.macys.com/dyn_img/creativepages/C8090347_hero_dsk.jpg">
+		</div>
+
+		<!-- LINKS -->
+		<div class="row fv-pop-links">
+			<ul>
+				<li>
+					<img src="https://assets.macys.com/dyn_img/creativepages/C8090347_logo_dsk.jpg">
+				</li>
+				<li class="fv-pop-links-brdr-lft">
+					<p class="store-locator">STORE LOCATOR</p>
+				</li>
+				<li class="fv-pop-links-brdr-lft">
+					<p class="restyling">RESTYLING</p>
+				</li>
+				<li>
+					<p class="faq">FAQs</p>
+				</li>
+				<li>
+					{{> social }}
+				</li>
+			</ul>
+		</div>
+
+		<div class="row fv-shop-now">
+			<p class="fv-txt">From boutique locales to tips & tricks, we're here to help you refurbish or<br />reinvent a cherished fur&mdash;or even uncover a new fave!</p>
+			<a data-cm="furvault_shopnow" href="https://www.macys.com/shop/womens-clothing/fur-clothing-the-fur-vault?id=69211"><button>SHOP NOW</button></a>
+		</div>
+
+		<!-- STORE LOCATOR -->
+		{{> store-locator }}
+		<!-- END STORE LOCATOR -->
+
+		<!-- RESTYLING -->
+		{{> restyling }}
+		<!-- END RESTYLING -->
+
+		<!-- FAQ -->
+		{{> faq }}
+		<!-- END FAQ -->
+	</div>
+	<!-- END DESKTOP -->
+
+	<!-- MOBILE -->
+	<div class="fv-mobile">
+		<!-- HERO -->
+		<div class="row fv-hero">
+			<img src="https://assets.macys.com/dyn_img/creativepages/C8090348_hero_mob.jpg">
+		</div>
+
+		<!-- NAV -->
+		<div class="ceg-header-placement"></div>
+		<div class="row fv-nav-bar ceg-menu">
+			<nav>
+				<a href="#storeLocatorMob"><div class="nav-link">Store Locator</div></a>
+				<a href="#restylingMob"><div class="nav-link">Restyling</div></a>
+				<a href="#faqMob"><div class="nav-link">FAQs</div></a>
+			</nav>
+		</div>
+
+		<!-- STORE LOCATOR -->
+		{{> store-locator-mobile }}
+		<!-- END STORE LOCATOR MOBILE -->
+
+		<!-- SHOP NOW MOBILE -->
+		<div class="row fv-shop-now-mobile">
+			<p class="fv-txt">Check out our online collection, too!</p>
+			<a data-cm="furvault_shopnow" href="https://www.macys.com/shop/womens-clothing/fur-clothing-the-fur-vault?id=69211"><button>SHOP NOW</button></a>
+		</div>
+
+		<!-- RESTYLING -->
+		{{> restyling-mobile }}
+		<!-- END RESTYLING MOBILE -->
+
+		<!-- FAQ -->
+		{{> faq-mobile }}
+		<!-- FAQ MOBILE -->
+	</div>
+	<!-- END MOBILE -->
+	
+</div>
+
+{{! Load  JS Last so DOM is already present }}
+<script src="{{version}}/js/fur-vault.manifest.js"></script>
+<script src="{{version}}/js/fur-vault.app.js"></script>

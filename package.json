@@ -1,0 +1,86 @@
+{
+  "name": "@marketing-campaigns/fur-vault",
+  "description": "fur vault sitelet",
+  "version": "0.10.0",
+  "repository": {
+    "type": "git",
+    "url": "git@code.devops.fds.com:polaris/campaign/fur-vault.git"
+  },
+  "config": {
+    "environment": [
+      {
+        "name": "key1",
+        "local": {
+          "mcom": "value1",
+          "bcom": "value2"
+        },
+        "prod": {
+          "mcom": "__VALUE3__",
+          "bcom": "__VALUE4__"
+        }
+      },
+      {
+        "name": "XAPI_HOST",
+        "local": {
+          "mcom": "https://mcom.xapi.com",
+          "bcom": "https://bcom.xapi.com"
+        },
+        "prod": {
+          "mcom": "__VALUE5__",
+          "bcom": "__VALUE6__"
+        }
+      }
+    ],
+    "pages": [
+      {
+        "path": "/",
+        "template": "main",
+        "autoHeader": true,
+        "autoFooter": true,
+        "quickview": false,
+        "tags": {
+          "description": "Find everything from expert fur care tips to in-store salon locations near you with The Fur Vault at Macy's. Learn about upcoming events and more.",
+          "canonical": "https://www.macys.com/p/fur-vault/",
+          "robots": "index, follow",
+          "title": "The Fur Vault - Macy's",
+          "ogTags": [
+            {
+              "key": "og:url",
+              "value": "https://www.macys.com/p/fur-vault/"
+            },
+            {
+              "key": "og:title",
+              "value": "The Fur Vault at Macy's"
+            },
+            {
+              "key": "og:description",
+              "value": "Find nearby salons & restyling inspiration with The Fur Vault at Macy’s!"
+            },
+            {
+              "key": "og:image",
+              "value": "https://assets.macys.com/dyn_img/creativepages/C8090348_hero_mob.jpg"
+            }
+          ]
+        },
+        "coremetrics": {
+          "pageType": "staticpages",
+          "pageId": "furvault",
+          "categoryID": "standard"
+        }
+      }
+    ],
+    "macysCliVersion": "1.291.0"
+  },
+  "engines": {
+    "node": "8.x",
+    "npm": "5.x"
+  },
+  "main": "src/fur-vault.js",
+  "devDependencies": {
+    "@core/dev-server": "^1.0.0",
+    "@core/lib": "^1.0.0",
+    "@core/server": "^1.0.0",
+    "lodash": "^4.17.4"
+  },
+  "dependencies": {}
+}

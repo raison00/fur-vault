@@ -1,0 +1,737 @@
+@import "~slick-carousel/slick/slick";
+
+/* Neue Helvetica W01 45 Light (22.01kb - Latin 1) */
+@font-face {
+  font-family: "HelveticaNeueW01-45Ligh";
+  src: url("//assets.macysassets.com/dyn_img/fonts/ae1656aa-5f8f-4905-aed0-93e667bd6e4a.eot?#iefix");
+  src: url("//assets.macysassets.com/dyn_img/fonts/ae1656aa-5f8f-4905-aed0-93e667bd6e4a.eot?#iefix") format("eot"), url("//assets.macysassets.com/dyn_img/fonts/5a13f7d1-b615-418e-bc3a-525001b9a671.woff2") format("woff2"), url("//assets.macysassets.com/dyn_img/fonts/530dee22-e3c1-4e9f-bf62-c31d510d9656.woff") format("woff"), url("//assets.macysassets.com/dyn_img/fonts/688ab72b-4deb-4e15-a088-89166978d469.ttf") format("truetype"), url("//assets.macysassets.com/dyn_img/fonts/7816f72f-f47e-4715-8cd7-960e3723846a.svg#7816f72f-f47e-4715-8cd7-960e3723846a") format("svg");
+}
+
+/* Neue Helvetica W01 75 Bold (22.35kb - Latin 1) */
+@font-face {
+    font-family: "HelveticaNeueW01-75Bold";
+    src: url("//assets.macysassets.com/dyn_img/fonts/c07fef9e-a934-42d7-92ad-69205f2b8a00.eot?#iefix");
+    src: url("//assets.macysassets.com/dyn_img/fonts/c07fef9e-a934-42d7-92ad-69205f2b8a00.eot?#iefix") format("eot"), url("//assets.macysassets.com/dyn_img/fonts/3b303641-706e-4221-94c4-4fb491f4f8ef.woff2") format("woff2"), url("//assets.macysassets.com/dyn_img/fonts/14ff6081-326d-4dae-b778-d7afa66166fc.woff") format("woff"), url("//assets.macysassets.com/dyn_img/fonts/8fda1e47-19be-46c7-8d83-8d4fb35572f0.ttf") format("truetype"), url("//assets.macysassets.com/dyn_img/fonts/f751c8ae-1057-46d9-8d74-62592e002568.svg#f751c8ae-1057-46d9-8d74-62592e002568") format("svg");
+}
+
+.fv-desktop {
+	display: block;
+}
+
+.fv-mobile {
+	display: none;
+}
+
+.fv-container {
+	max-width: 1200px;
+	margin: auto;
+}
+
+.fv-container .fv-pop-links {
+	width: 900px;
+	margin: auto;
+	margin-top: 2em;
+	text-align: center;
+}
+
+.fv-container .fv-pop-links ul {
+	list-style-type: none;
+}
+
+.fv-container .fv-pop-links ul li {
+	float: left;
+	width: 180px;
+	font-family: helvetica, arial, sans-serif;
+	font-size: 18px;
+	font-weight: bold;
+}
+
+.fv-container .fv-pop-links ul li.fv-pop-links-brdr-lft {
+	border-right: solid 1px #000000;
+}
+
+.fv-container .fv-pop-links ul li p {
+	cursor: pointer;
+	margin-bottom: 0;
+	font-weight: bold;
+}
+
+.fv-container .fv-pop-links ul li p:hover {
+	color: red;
+}
+
+.fv-shop-now {
+	text-align: center;
+	margin-top: 1em;
+}
+
+.fv-shop-now p {
+	font-family: "HelveticaNeueW01-45Ligh", arial, sans-serif;
+	font-size: 25px;
+	line-height: 33px;
+	margin-top: 1em;
+	margin-bottom: 1em; 
+}
+
+/* STORE LOCATOR OVERLAY */
+.fv-store-locator {
+	width: 895px;
+	margin: auto;
+	min-height: 300px;
+	border: solid 1px #000000;
+	border-radius: 5px;
+	position: relative;
+	margin-top: -17em;
+    background-color: #ffffff;
+    display: none;
+}
+
+.fv-close-btn {
+	font-family: "HelveticaNeueW01-45Ligh", arial, sans-serif;
+	position: absolute;
+	z-index: 100;
+	top: -5px;
+	right: 15px;
+    font-size: 2em;
+    color: #aaaaaa;
+    cursor: pointer;
+}
+
+.fv-sl-wrapper {
+	/*text-align: center;*/
+	margin-top: 1.5em;
+}
+
+.fv-sl-wrapper img {
+	margin-left: 17em;
+}
+
+.fv-store-locator-txt {
+	font-family: "HelveticaNeueW01-45Ligh", arial, sans-serif;
+	font-size: 25px;
+	line-height: 33px;
+	margin-top: 15px;
+	text-align: center;
+}
+
+.fv-dropdown-container {
+	width: 520px;
+	margin: auto;
+}
+
+.fv-sl-wrapper span.find-store {
+	font-size: 1.5em;
+	font-weight: bold;
+	margin-right: 15px;
+	/*margin-left: 2em;*/
+}
+
+.fv-sl-wrapper select {
+	width: 13em;
+	font-size: 1.5em;
+	height: 2em;
+}
+
+.fv-store-container {
+	display: none;
+}
+
+.fv-store-results {
+	width: 89%;
+	margin: 0 auto;
+	margin-top: 4em;
+}
+
+.fv-store-info, .fv-store-hours {
+	width: 50%;
+	float: left;
+}
+
+.fv-store-holder {
+	height: 6em;
+	margin-bottom: 2em;
+}
+
+.fv-store-holder.border-btm {
+	border-bottom: solid 1px #000000;
+}
+
+.fv-store-name {
+	font-size: 1.2em;
+	font-weight: bold;
+	color: red;
+	margin-bottom: 5px;
+}
+
+.fv-hours {
+	font-size: 1.2em;
+	font-weight: bold;
+}
+
+.store-locator-shop {
+	width: 80%;
+	margin: auto;
+}
+
+.store-locator-shop p {
+	width: 70%;
+}
+
+.store-locator-shop a {
+	width: 22%;
+}
+
+.store-locator-shop p, .store-locator-shop a {
+	float: left; 
+}
+
+/* FAQ OVERLAY */
+.fv-faq {
+	width: 895px;
+	margin: auto;
+	min-height: 300px;
+	border: solid 1px #000000;
+	border-radius: 5px;
+	position: relative;
+	margin-top: -17em;
+    background-color: #ffffff;
+    display: none;
+}
+
+.fv-faq-wrapper {
+	/*text-align: center;*/
+	margin-top: 1.5em;
+}
+
+.faq-container {
+	width: 80%;
+	margin: auto;
+}
+
+.faq-qa {
+	border-bottom: solid 1px #000000;
+}
+
+.fv-faq-wrapper p {
+	font-family: "HelveticaNeueW01-45Ligh", arial, sans-serif;
+	font-size: 21px;
+	line-height: 26px;;
+}
+
+.fv-faq-wrapper p.faq-main-txt {
+	text-align: center;
+	margin-top: 2em;
+	margin-bottom: 2em;
+}
+
+/* Style the element that is used to open and close the accordion class */
+.faq-container p.accordion {
+    /*background-color: #eee;
+    color: #444;*/
+    cursor: pointer;
+    /*padding: 18px;*/
+    width: 100%;
+    text-align: left;
+    border: none;
+    outline: none;
+    transition: 0.4s;
+    margin-bottom:0px;
+    margin-top: 10px;
+}
+
+/* Add a background color to the accordion if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+.faq-container p.accordion.active, .faq-container p.accordion:hover {
+    /*background-color: #ddd;*/
+}
+
+/* Unicode character for "plus" sign (+) */
+.faq-container p.accordion:after {
+	font-family: "HelveticaNeueW01-45Ligh", arial, sans-serif;
+    content: '\002B'; 
+    font-size: 31px;
+    color: #777;
+    float: right;
+    margin-right: .5em;
+}
+
+/* Unicode character for "minus" sign (-) */
+.faq-container p.accordion.active:after {
+	font-family: "HelveticaNeueW01-45Ligh", arial, sans-serif;
+    content: "\2212"; 
+}
+
+/* Style the element that is used for the panel class */
+
+.faq-container div.panel {
+	font-family: "HelveticaNeueW01-45Ligh", arial, sans-serif;
+    background-color: white;
+    max-height: 0;
+    overflow: hidden;
+    transition: 0.4s ease-in-out;
+    opacity: 0;
+    margin-bottom:10px;
+    border: none !important;
+    margin-left: 2px;
+    line-height: 20px;
+}
+
+.faq-container div.panel.show {
+    opacity: 1;
+    max-height: 1000px; /* Whatever you like, as long as its more than the height of the content (on all screen sizes) */
+}
+
+.faq-container .faq-bullet:before {
+	content: "\2022";
+	margin-right: 7px;
+}
+
+.faq-last {
+	width: 50%;
+	float: left;
+}
+
+.faq-block {
+	margin-right: 2em;
+	margin-bottom: 2em;
+}
+
+.in-store-services {
+	margin-top: 1em;
+}
+
+.faq-last-q {
+	margin-bottom: 4em;
+}
+
+.faq-shop {
+	width: 65%;
+	margin: auto;
+}
+
+.faq-shop p {
+	width: 70%;
+	margin-top: .5em;
+}
+
+.faq-shop a {
+	/*width: 22%;*/
+}
+
+.faq-shop p, .faq-shop a {
+	float: left; 
+}
+
+/* RESTYLING OVERLAY */
+	.fv-restyling {
+	width: 895px;
+	margin: auto;
+	min-height: 300px;
+	border: solid 1px #000000;
+	border-radius: 5px;
+	position: relative;
+	margin-top: -17em;
+    background-color: #ffffff;
+    display: none;
+}
+
+.fv-rs-wrapper {
+	/*text-align: center;*/
+	margin-top: 1.5em;
+}
+
+.fv-restyling-txt {
+	font-family: "HelveticaNeueW01-45Ligh", arial, sans-serif;
+	font-size: 25px;
+	line-height: 33px;
+	margin-top: 15px;
+	text-align: center;
+}
+
+.fv-restyling-slider .before, .fv-restyling-slider .after, .fv-restyling-slider .slider-btm-txt {
+	font-family: "HelveticaNeueW01-45Ligh", arial, sans-serif;
+	font-size: 20px;
+	line-height: 33px;
+}
+
+.fv-restyling-slider .before span, .fv-restyling-slider .after span  {
+	font-family: "HelveticaNeueW01-75Bold", arial, sans-serif;
+}
+
+.fv-restyling-slider .before {
+	margin-bottom: .5em;
+	margin-left: 2.5em;
+}
+
+.fv-restyling-slider .after {
+	margin-left: 21em;
+	margin-top: -29em;
+}
+
+.fv-restyling-slider .slider-btm-txt {
+	text-align: center;
+	margin-top: 28em;
+}
+
+
+/* Slider Styles */
+.slick-list.draggable {
+	padding: unset !important;
+	margin: 0px 50px 0px 60px !important;
+}
+
+.fv-restyling-slider button {
+	padding: none !important;
+}
+
+button.slick-prev, button.slick-next, button.slick-prev:hover, button.slick-next:hover, button.slick-prev:focus, button.slick-next:focus, button.slick-next:active, button.slick-prev:active {
+    z-index: 100;
+    width: 17px;
+    height: 32px;
+    top: 122px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    border: none !important;
+    /* TODO:  NEED TO USE ARROWS FOR COMP AND DETERMINE BEST PLAN FOR COMPONENTIZATION; */
+    background-image: url("https://assets.macys.com/dyn_img/creativepages/C8090347_slide_arrow.gif");
+    padding: 0px;
+    color: transparent;
+    outline: none;
+    background-color: transparent !important;
+}
+
+button.slick-prev, button.slick-prev:hover, button.slick-prev:focus {
+    top: 366px;
+    left: 20px;
+}
+
+button.slick-next, button.slick-next:hover, button.slick-next:focus {
+    top: -22.5em;
+    right: -53em;
+    transform: rotate(180deg);
+}
+
+.slick-disabled {
+	opacity: .3;
+}
+
+
+.restyling-shop {
+	width: 80%;
+	margin: auto;
+}
+
+.restyling-shop p {
+	width: 70%;
+}
+
+.restyling-shop a {
+	width: 22%;
+}
+
+.restyling-shop p, .restyling-shop a {
+	float: left; 
+}
+
+
+@media only screen and (max-width: 1023px) {
+	.fv-container {
+		background-color: #eeeeee;
+	}
+	.fv-desktop {
+		display: none;
+	}
+
+	.fv-mobile {
+		display: block;
+	}
+
+	.fv-gutter {
+		width: 95%;
+		margin: auto;
+	}
+
+	.fv-mobile .fv-hero img {
+		width: 100%;
+	}
+
+	.fv-nav-bar {
+		background-color: #ffffff;
+		margin-bottom: 5vw;
+	}
+
+	.fv-nav-bar nav {
+		text-align: center;
+	}
+
+	.nav-link {
+		width: 33%;
+		float: left;
+		font-weight: bold;
+		margin-top: 2vw;
+		margin-bottom: 2vw;
+		font-size: 3vw;
+	}
+
+	.ceg-fixed-nav.ceg-menu { /* <---- FIXED */
+        position: fixed;
+        width: 100%;
+        top: 0;
+        background-color: #ffffff;
+        left: 0;
+    }
+
+    .ceg-fixed-nav.ceg-menu {  /* <---- FIXED */
+        margin: 0px 0px;
+    }
+
+    .fv-header {
+    	width: 100%;
+    	height: 53vw;
+	    background-size: contain;
+	    background-repeat: repeat-x;
+	    font-family: helvetica, arial, sans-serif;
+	    color: #fff;
+	    display: flex;
+	    flex-direction: row;
+	    justify-content: center;
+	    align-items: center;
+	    text-align: center;
+    }
+
+    .fv-header h2 {
+    	margin: 0;
+	    font-size: 10vw;
+	    letter-spacing: 0.5px;
+	    text-shadow: #000 0px 1px 0;
+	    font-weight: bolder;
+	    color: #ffffff;
+    }
+
+    /* STORE LOCATOR */
+    .fv-store-locator-mobile {
+    	background-color: #ffffff;
+    	margin-bottom: 5vw;
+    }
+    .fv-store-locator-mobile .fv-header {
+    	background-image: url("https://assets.macys.com/dyn_img/creativepages/C8090348_header_01.jpg");
+    }
+
+    .fv-store-locator-mobile p.fv-gutter {
+    	font-size: 4.5vw;
+    	line-height: 6vw;
+    	margin-top: 3vw;
+    }
+
+    .fv-dropdown-container {
+    	margin-top: 5vw;
+    }
+
+    .fv-dropdown-container span {
+    	font-weight: bold;
+    	font-size: 7vw;
+    }
+
+    .fv-dropdown-container select {
+    	width: 100%;
+    	height: 15vw;
+    	font-size: 7vw;
+    	margin-top: 1.5vw;
+    }
+
+    .fv-store-holder {
+    	height: auto;
+    }
+
+    .fv-store-hours, .fv-store-info {
+    	width: 100%;
+    	float: unset;
+    }
+
+    .fv-store-hours {
+    	margin-top: 5vw;
+    	margin-bottom: 2em;
+    }
+
+    .fv-store-results {
+    	margin-top: 10vw;
+    }
+
+    .fv-close-btn-mob {
+	    font-family: HelveticaNeueW01-45Ligh,arial,sans-serif;
+	    font-size: 2em;
+	    color: #aaa;
+	    float: right;
+	    margin-top: -9vw;
+	}
+
+	.fv-store-name {
+		font-size: 6vw;
+		margin-bottom: 2vw;
+	}
+
+	.fv-store-address, .fv-hours-label {
+		font-size: 4.5vw;
+		line-height: 5vw;
+	}
+
+	.fv-store-hours .fv-hours-mob {
+		font-size: 4.5vw;
+		font-weight: bold;
+	}
+
+	/* SHOP NOW MOBILE */
+	.fv-shop-now-mobile {
+		background-color: #ffffff;
+		margin-bottom: 5vw;
+		text-align: center;
+	}
+
+	.fv-shop-now-mobile .fv-txt {
+		font-size: 4.5vw;
+		font-weight: bold;
+		margin-top: 4vw;
+		margin-bottom: 4vw;
+	}
+
+	.fv-shop-now-mobile button {
+		position: unset;
+		width: 30vw;
+		height: 8vw;
+		font-size: 3vw;
+		padding: .75em 1.5em .8125em !important;
+	}
+
+	/* RESTYLING MOBILE */
+	.fv-restyling-mobile {
+		background-color: #ffffff;
+		margin-bottom: 5vw;
+	}
+
+	.fv-restyling-mobile .fv-header {
+		background-image: url("https://assets.macys.com/dyn_img/creativepages/C8090348_header_02.jpg");
+	}
+
+	.fv-restyling-mobile p.fv-gutter {
+    	font-size: 4.5vw;
+    	line-height: 6vw;
+    	margin-top: 3vw;
+    }
+
+	.restyle-section {
+		margin-top: 5vw;
+		margin-bottom: 5vw;
+	}
+
+	.restyle-section img {
+		width: 100%;
+	}
+
+	.restyle-ab-p p {
+		font-size: 4vw;
+		line-height: 5.5vw;
+	}
+
+	.restyle-ab-p p span {
+		font-weight: bold;
+	}
+
+	.restyle-ab-img img {
+		margin-bottom: 2vw;
+	}
+
+	.restyle-left, .restyle-right {
+		width: 50%;
+		float: left;
+	}
+
+	.restyle-left {
+		padding-right: 2vw;
+	}
+
+	.restyle-right {
+		padding-left: 2vw;
+	}
+
+	.restyle-desc {
+		font-size: 4vw;
+		line-height: 5.5vw;
+	}
+
+	/* FAQ MOBILE */
+	.fv-faq-mobile {
+		background-color: #ffffff;
+		margin-bottom: 5vw;
+	}
+
+	.fv-faq-mobile .fv-header {
+		background-image: url("https://assets.macys.com/dyn_img/creativepages/C8090348_header_03.jpg");
+	}
+
+	.fv-faq-mobile p.fv-gutter {
+    	font-size: 4.5vw;
+    	line-height: 6vw;
+    	margin-top: 3vw;
+    }
+
+	.faq-container {
+		margin-top: 5vw;
+	}
+
+	.faq-container p.accordion:after {
+	    font-size: 10vw;
+	    margin-right: 2vw;
+	    margin-top: -6vw;
+	}
+
+	.faq-container p.accordion {
+		padding-top: 4vw;
+		padding-bottom: 4vw;
+		margin-top: 0;
+		font-size: 4vw;
+	}
+
+	.faq-container p.accordion.active {
+		border-bottom: solid 1px #000000
+	}
+
+	.faq-container div.panel {
+		margin-bottom: 0px;
+		font-size: 3.5vw;
+		line-height: 4vw;
+		transition: .2s ease-in-out;
+	}
+
+	.faq-container div.panel ul {
+		margin-left: 5%;
+		font-size: 3.5vw;
+		line-height: 4.5vw;
+	}
+
+	.faq-last {
+		width: 100%;
+		float: unset;
+	}
+
+	.faq-container div.panel.show {
+	    opacity: 1;
+	    max-height: 500vw;
+	    margin-top: 2vw;
+		margin-bottom: 2vw;
+	}
+
+	.faq-block {
+		font-size: 4vw;
+	}
+
+	.faq-block b {
+		font-family: "HelveticaNeueW01-75Bold", arial, sans-serif;
+	}
+
+}	
+
+
+
+
+
+	
